@@ -1,13 +1,16 @@
 import { Helmet } from "react-helmet-async";
+import App from "../components/HomeLayout/Banner";
 
 const Home = () => {
   return (
-    <div>
+    <div className="w-11/12 lg:w-5/6 mx-auto">
       <Helmet>
         <title>Home | React App</title>
         <link rel="canonical" href="/" />
       </Helmet>
-      <h2 className="text-red-500">This is Home Page</h2>
+      <div className="my-12">
+        <App></App>
+      </div>
     </div>
   );
 };

@@ -13,6 +13,12 @@ const config = {
       secondary: "",
       tertiary: "",
     },
+    backgroundImage: {
+      career: "url('./assets/career_counseling.jpg')",
+      resume: "url('./assets/Resume_review.jpg')",
+      talking: "url('./assets/talking_client.jpg')",
+      secure: "url('./assets/secure_future.jpg')",
+    },
   },
 };
 
