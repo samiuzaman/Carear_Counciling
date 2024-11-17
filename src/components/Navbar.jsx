@@ -22,8 +22,8 @@ const NavbarComponent = () => {
       <NavbarContainer className="mx-auto p-2 md:p-0">
         <NavbarBrand>
           {/* <img src={KeepLogo} alt="keep" /> */}
-          <Link to="/">
-            Career <span>Climb</span>
+          <Link to="/" className="text-2xl text-[#ED4C67] font-semibold">
+            Career <span className="text-[#009432]">Climb</span>
           </Link>
         </NavbarBrand>
         <NavbarList className="space-x-5">
