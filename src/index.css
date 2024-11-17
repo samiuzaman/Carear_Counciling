@@ -17,3 +17,7 @@
 body{
   @apply font-Poppins
 }
+
+a.active {
+  @apply text-[#4E21FF] font-medium font-Lora
+}
