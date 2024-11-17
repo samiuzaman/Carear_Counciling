@@ -1,0 +1,19 @@
+/* Poppins Font CDN */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+/* Lora Font CDN */
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+
+/* Playfair Display Font CDN  */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+/* Keep React UI Library */
+@import "keep-react/css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  @apply font-Poppins
+}
