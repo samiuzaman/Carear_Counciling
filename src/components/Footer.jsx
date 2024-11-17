@@ -1,3 +1,10 @@
+import {
+  FaEnvelope,
+  FaFacebook,
+  FaLinkedin,
+  FaPinterest,
+  FaTwitter,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -20,7 +27,7 @@ const Footer = () => {
 
           <div className="w-full lg:w-1/2 mx-auto flex justify-between md:justify-around">
             <footer>
-              <h4 className="mb-3 text-body-3 font-medium text-metal-900 dark:text-white">
+              <h4 className="mb-3 text-body-3 text-xl font-semibold text-metal-900 dark:text-white">
                 Services
               </h4>
               <ul className="flex flex-col gap-3 text-body-3 font-normal text-metal-600 dark:text-metal-300">
@@ -31,15 +38,41 @@ const Footer = () => {
               </ul>
             </footer>
             <footer>
-              <h4 className="mb-3 text-body-3 font-medium text-metal-900 dark:text-white">
-                Connect
+              <h4 className="mb-3 text-body-3 text-xl font-semibold text-metal-900 dark:text-white">
+                Contact Us
               </h4>
               <ul className="flex flex-col gap-3 text-body-3 font-normal text-metal-600 dark:text-metal-300">
-                <li> G-mail</li>
-                <li>Facebook</li>
-                <li>LinkedIn</li>
-                <li>Twitter</li>
-                <li>Pinterest</li>
+                <Link
+                  to="https://mail.google.com/"
+                  className="flex items-center gap-2"
+                >
+                  <FaEnvelope /> Gmail
+                </Link>
+                <Link
+                  to="https://www.facebook.com/"
+                  className="flex items-center gap-2"
+                >
+                  <FaFacebook />
+                  Facebook
+                </Link>
+                <Link
+                  to="https://www.linkedin.com/"
+                  className="flex items-center gap-2"
+                >
+                  <FaLinkedin />
+                  LinkedIn
+                </Link>
+                <Link to="https://x.com/" className="flex items-center gap-2">
+                  <FaTwitter />
+                  Twitter
+                </Link>
+                <Link
+                  to="https://www.pinterest.com/"
+                  className="flex items-center gap-2"
+                >
+                  <FaPinterest />
+                  Pinterest
+                </Link>
               </ul>
             </footer>
           </div>

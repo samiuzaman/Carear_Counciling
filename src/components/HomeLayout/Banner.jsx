@@ -28,7 +28,7 @@ export default function App() {
         className="mySwiper "
       >
         <SwiperSlide className="bg-career slider-bg">
-          <div className="flex flex-col justify-center items-center h-[75vh]">
+          <div className="slider-context">
             <h3 className="text-[#00a8ff] sliderHeading">
               The Best Opportunity to Fulfill Your Dreams
             </h3>
@@ -36,11 +36,13 @@ export default function App() {
               Join expert career guidance sessions to enhance your skills and
               confidently tackle future challenges
             </p>
-            <Button color="primary" className="mt-6 text-warning-25">View Details</Button>
+            <Button color="primary" className="mt-6 text-warning-25">
+              View Details
+            </Button>
           </div>
         </SwiperSlide>
         <SwiperSlide className="bg-resume slider-bg">
-          <div className="flex flex-col justify-center items-center h-[75vh]">
+          <div className="slider-context">
             <h3 className="sliderHeading text-[#2ed573] ">
               Free Resume Review!
             </h3>
@@ -54,7 +56,7 @@ export default function App() {
           </div>
         </SwiperSlide>
         <SwiperSlide className="bg-talking slider-bg">
-          <div className="flex flex-col justify-center items-center h-[75vh]">
+          <div className="slider-context">
             <h3 className=" text-[#FFC312] sliderHeading">
               Our Success Stories
             </h3>
@@ -62,11 +64,13 @@ export default function App() {
               Over 1,000 clients have excelled in their careers with our expert
               guidance. Start your journey today
             </p>
-            <Button color="warning" className="mt-6">View Details</Button>
+            <Button color="warning" className="mt-6">
+              View Details
+            </Button>
           </div>
         </SwiperSlide>
         <SwiperSlide className="bg-secure slider-bg">
-          <div className="flex flex-col justify-center items-center h-[75vh]">
+          <div className="slider-context">
             <h3 className=" text-[#fa4949] sliderHeading">
               Secure Your Future
             </h3>
@@ -74,7 +78,9 @@ export default function App() {
               Discover the career path best suited for you and learn how to
               excel in your professional journey
             </p>
-            <Button color="error" className="mt-6 text-warning-25">View Details</Button>
+            <Button color="error" className="mt-6 text-warning-25">
+              View Details
+            </Button>
           </div>
         </SwiperSlide>
       </Swiper>
