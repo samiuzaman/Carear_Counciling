@@ -11,7 +11,7 @@ const firebaseConfig = {
   projectId: "fir-concept-bc9e0",
   storageBucket: "fir-concept-bc9e0.firebasestorage.app",
   messagingSenderId: "742854701367",
-  appId: "1:742854701367:web:094a64da7137e103f46ab2",
+  appId: "1:742854701367:web:72093237153ec47ff46ab2",
 };
 
 // Initialize Firebase

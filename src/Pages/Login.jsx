@@ -16,8 +16,24 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Login = () => {
-  const myName = useContext(AuthContext);
-  console.log(myName);
+  const { setUser, setErrorMessage, handleSigninGoogle, handleSigninTwitter } =
+    useContext(AuthContext);
+  // Handle Google Login Functionality
+  const handleGoogleLogin = () => {
+    handleSigninGoogle()
+      .then((result) => {
+        setUser(result.user);
+      })
+      .catch((error) => setErrorMessage(error.message));
+  };
+
+  // Handle Twitter Login Functionality
+  const handleTwitterLogin = () => {
+    handleSigninTwitter()
+      .then((result) => setUser(result.user))
+      .catch((error) => setErrorMessage(error));
+  };
+
   return (
     <div>
       <Card className="max-w-sm mx-auto mt-12">
@@ -26,11 +42,21 @@ const Login = () => {
             <CardTitle>Log In</CardTitle>
           </CardHeader>
           <div className="flex items-center justify-between gap-3">
-            <Button variant="outline" color="secondary" className="w-full">
+            <Button
+              onClick={handleGoogleLogin}
+              variant="outline"
+              color="secondary"
+              className="w-full"
+            >
               <FaGoogle size={20} className="mr-1.5 text-[#4285F4] font-bold" />
               Google
             </Button>
-            <Button variant="outline" color="secondary" className="w-full">
+            <Button
+              onClick={handleTwitterLogin}
+              variant="outline"
+              color="secondary"
+              className="w-full"
+            >
               <FaTwitter size={20} className="mr-1.5 text-[#1DA1F2]" />
               Twitter
             </Button>

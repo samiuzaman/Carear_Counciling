@@ -10,10 +10,29 @@ import {
   Label,
 } from "keep-react";
 import { Envelope, Image, Lock, Person } from "phosphor-react";
+import { useContext } from "react";
 import { FaGoogle, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Register = () => {
+  const { handleSigninGoogle, setUser, setErrorMessage, handleSigninTwitter } =
+    useContext(AuthContext);
+  // Handle Google Login Functionality
+  const handleGoogleLogin = () => {
+    handleSigninGoogle()
+      .then((result) => {
+        setUser(result.user);
+      })
+      .catch((error) => setErrorMessage(error.message));
+  };
+
+  // Handle Twitter Login Functionality
+  const handleTwitterLogin = () => {
+    handleSigninTwitter()
+      .then((result) => setUser(result.user))
+      .catch((error) => setErrorMessage(error));
+  };
   // const regex =
   //   /^(?=.*[a-z])(?=.*[A-Z])(?=(.*\d){2,})(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
 
@@ -25,11 +44,21 @@ const Register = () => {
             <CardTitle>Register</CardTitle>
           </CardHeader>
           <div className="flex items-center justify-between gap-3">
-            <Button variant="outline" color="secondary" className="w-full">
+            <Button
+              onClick={handleGoogleLogin}
+              variant="outline"
+              color="secondary"
+              className="w-full"
+            >
               <FaGoogle size={20} className="mr-1.5 text-[#4285F4] font-bold" />
               Google
             </Button>
-            <Button variant="outline" color="secondary" className="w-full">
+            <Button
+              onClick={handleTwitterLogin}
+              variant="outline"
+              color="secondary"
+              className="w-full"
+            >
               <FaTwitter size={20} className="mr-1.5 text-[#1DA1F2]" />
               Twitter
             </Button>
