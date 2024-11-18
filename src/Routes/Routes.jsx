@@ -4,6 +4,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import Home from "../Pages/Home";
 import MyProfile from "../Pages/MyProfile";
 import Services from "../components/HomeLayout/Services";
+import ServiceDetails from "../Pages/ServiceDetails";
 
 const routes = createBrowserRouter([
   {
@@ -21,6 +22,18 @@ const routes = createBrowserRouter([
             loader: () => fetch("../carear.json"),
           },
         ],
+      },
+      {
+        path: "/secvice/:id",
+        element: <ServiceDetails></ServiceDetails>,
+        loader: async ({ params }) => {
+          const response = await fetch("../carear.json");
+          const data = await response.json();
+          const service = data.find(
+            (service) => service.id === parseInt(params.id)
+          );
+          return service;
+        },
       },
       {
         path: "/myprofile",

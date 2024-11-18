@@ -1,14 +1,16 @@
 import { Button, Card, CardContent, CardHeader } from "keep-react";
+import { useNavigate } from "react-router-dom";
 
 const ServiceCard = ({ service }) => {
-  const { image, service_name, category, pricing, counselor } = service;
+  const { id, image, service_name, category, pricing, counselor } = service;
+  const navigate = useNavigate();
   return (
-    <div className="mt-8">
+    <div className=" mt-8">
       <Card>
         <CardHeader>
           <img src={image}></img>
         </CardHeader>
-        <CardContent className="space-y-3">
+        <CardContent className="space-y-3 bg-[#f1f2f6]">
           <h2 className="text-xl text-black font-bold font-PlayfairDisplay">
             {service_name}
           </h2>
@@ -18,7 +20,7 @@ const ServiceCard = ({ service }) => {
           </p>
           <p className="card-text"> Category : {category}</p>
           <p className="card-text"> Price: {pricing}</p>
-          <Button>Learn More</Button>
+          <Button onClick={() => navigate(`/secvice/${id}`)}>Learn More</Button>
         </CardContent>
       </Card>
     </div>

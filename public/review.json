@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "service_name": "Career Counseling Sessions",
+    "name": "Michael Brown",
+    "image": "https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "rating": 4.5,
+    "review_text": "This session was very helpful for understanding the next steps in my career. The guidance was practical, and I left feeling confident about my future prospects."
+  },
+  {
+    "id": 2,
+    "service_name": "Resume Review",
+    "name": "Emily Davis",
+    "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1588&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "rating": 4.9,
+    "review_text": "The resume review was exceptional! The feedback was detailed, and the suggestions made my resume stand out. I got more interview calls after implementing the changes."
+  },
+  {
+    "id": 3,
+    "service_name": "Job Interview Preparation",
+    "name": "Emma Johnson",
+    "image": "https://images.unsplash.com/photo-1551438632-cacd75df629f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "rating": 4.9,
+    "review_text": "The job interview preparation session was fantastic. The counselor provided mock interviews and detailed feedback that boosted my confidence and helped me secure my dream job."
+  },
+  {
+    "id": 4,
+    "service_name": "Career Path Guidance",
+    "name": "James Carter",
+    "image": "https://images.unsplash.com/photo-1652471943570-f3590a4e52ed?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "rating": 4.8,
+    "review_text": "I found the career path guidance session extremely helpful. It gave me a clear roadmap for my future and actionable steps to achieve my goals. Highly recommended for those feeling stuck!"
+  },
+  {
+    "id": 5,
+    "service_name": "Freelancing Tips",
+    "name": "Olivia Martinez",
+    "image": "https://images.unsplash.com/photo-1537511446984-935f663eb1f4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "rating": 4.7,
+    "review_text": "The freelancing tips shared during the session were practical and easy to implement. I now feel more confident about managing clients and building a sustainable freelance career."
+  },
+  {
+    "id": 6,
+    "name": "Emily Carter",
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fHByb2Zlc3Npb25hbCUyMHByb2ZpbGV8ZW58MHx8MHx8fDI%3D",
+    "rating": 4.8,
+    "service_name": "LinkedIn Profile Review",
+    "review_text": "The counselor gave excellent suggestions to optimize my profile. Within a week, I started receiving job inquiries."
+  },
+  {
+    "id": 7,
+    "name": "Daniel Wilson",
+    "image": "https://images.unsplash.com/photo-1530268729831-4b0b9e170218?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "rating": 4.7,
+    "service_name": "Career Transition Support",
+    "review_text": "The session provided a clear roadmap for transitioning into a new field. I feel much more confident now!"
+  },
+  {
+    "id": 8,
+    "name": "Isabella Miller",
+    "image": "https://images.unsplash.com/photo-1551438632-e8c7d9a5d1b7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "rating": 4.8,
+    "service_name": "Career Exploration",
+    "review_text": "I discovered career paths I hadn't even considered before. The experts were insightful and supportive."
+  },
+  {
+    "id": 9,
+    "name": "Mia Martinez",
+    "image": "https://images.unsplash.com/photo-1664575602554-2087b04935a5?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "rating": 4.7,
+    "service_name": "Salary Negotiation Coaching",
+    "review_text": "This coaching session taught me how to confidently discuss compensation. I highly recommend it."
+  },
+  {
+    "id": 10,
+    "name": "Lucas Garcia",
+    "image": "https://images.unsplash.com/photo-1559526323-cb2f2fe2591b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "rating": 4.8,
+    "service_name": "Soft Skills Training",
+    "review_text": "The training improved my communication skills significantly. I feel more confident in workplace interactions."
+  },
+  {
+    "id": 11,
+    "name": "Benjamin Lee",
+    "image": "https://images.unsplash.com/flagged/photo-1555728750-55f4db213833?q=80&w=1575&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "rating": 4.9,
+    "service_name": "Leadership Development",
+    "review_text": "The course transformed my approach to leadership. My team has responded positively to the changes."
+  },
+  {
+    "id": 12,
+    "name": "Charlotte Thompson",
+    "image": "https://plus.unsplash.com/premium_photo-1672691612619-29301d9aafac?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "rating": 4.8,
+    "service_name": "Job Search Strategy",
+    "review_text": "The strategies shared in this session helped me land a job in just two weeks. A game-changer for job seekers!"
+  }
+]
