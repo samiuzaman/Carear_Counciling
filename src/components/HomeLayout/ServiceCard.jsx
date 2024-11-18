@@ -8,7 +8,7 @@ const ServiceCard = ({ service }) => {
     <div className=" mt-8">
       <Card>
         <CardHeader>
-          <img src={image}></img>
+          <img src={image} className="h-52"></img>
         </CardHeader>
         <CardContent className="space-y-3 bg-[#f1f2f6]">
           <h2 className="text-xl text-black font-bold font-PlayfairDisplay">

@@ -25,14 +25,14 @@ const Reviews = () => {
           Comment
         </Button>
       </form>
-      <div className="flex flex-col border border-metal-200 dark:border-metal-800 rounded-xl">
+      <div className="flex flex-col border border-metal-200 dark:border-metal-800 rounded-xl mx-[2.5%]">
         <CardContent className="">
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-3 mb-4 ">
             <Avatar>
               {/* <AvatarImage src="/images/avatar/avatar-1.png" /> */}
               <AvatarFallback>KR</AvatarFallback>
             </Avatar>
-            <h2 className="text-xl">
+            <h2 className="text-xl text-black font-medium">
               <span className="text-[#8F9495]">By</span> Rahat Chowdhury
             </h2>
           </div>

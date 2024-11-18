@@ -5,6 +5,8 @@ import Home from "../Pages/Home";
 import MyProfile from "../Pages/MyProfile";
 import Services from "../components/HomeLayout/Services";
 import ServiceDetails from "../Pages/ServiceDetails";
+import Login from "../Pages/Login";
+import Register from "../Pages/Register";
 
 const routes = createBrowserRouter([
   {
@@ -38,6 +40,14 @@ const routes = createBrowserRouter([
       {
         path: "/myprofile",
         element: <MyProfile></MyProfile>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
       },
     ],
   },
