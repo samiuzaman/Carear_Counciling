@@ -30,3 +30,6 @@ a.active {
 .slider-context {
   @apply flex flex-col justify-center items-center h-[75vh] px-12;
 }
+.card-text{
+  @apply text-base font-normal text-[#2f3542]
+}

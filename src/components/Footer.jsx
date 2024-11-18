@@ -32,9 +32,10 @@ const Footer = () => {
               </h4>
               <ul className="flex flex-col gap-3 text-body-3 font-normal text-metal-600 dark:text-metal-300">
                 <li> Career Coaching</li>
-                <li>Job Board</li>
-                <li>E-Learning</li>
-                <li>Webinars</li>
+                <li>Soft Skills Training</li>
+                <li>Interview Preparation</li>
+                <li>Freelancing Tips</li>
+                <li>Leadership Development</li>
               </ul>
             </footer>
             <footer>

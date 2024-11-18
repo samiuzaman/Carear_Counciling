@@ -12,6 +12,8 @@ const config = {
       primary: "",
       secondary: "",
       tertiary: "",
+      black: "#000000",
+      white: "#ffffff"
     },
     backgroundImage: {
       career: "url('./assets/career_counseling.jpg')",

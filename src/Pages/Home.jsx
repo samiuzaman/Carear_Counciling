@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import App from "../components/HomeLayout/Banner";
+import { Outlet } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       </Helmet>
       <div className="my-12">
         <App></App>
+        <Outlet></Outlet>
       </div>
     </div>
   );
