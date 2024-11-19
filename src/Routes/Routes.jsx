@@ -7,6 +7,7 @@ import Services from "../components/HomeLayout/Services";
 import ServiceDetails from "../Pages/ServiceDetails";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import Forgate from "../Pages/Forgate";
 
 const routes = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const routes = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
       },
+      {
+        path: "/forgate",
+        element: <Forgate></Forgate>
+      }
     ],
   },
 ]);

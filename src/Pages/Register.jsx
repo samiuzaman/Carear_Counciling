@@ -1,4 +1,11 @@
 import {
+  Alert,
+  AlertContainer,
+  AlertDescription,
+  AlertDismiss,
+  AlertIcon,
+  AlertLink,
+  AlertTitle,
   Button,
   Card,
   CardContent,
@@ -14,10 +21,19 @@ import { useContext } from "react";
 import { FaGoogle, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
-  const { handleSigninGoogle, setUser, setErrorMessage, handleSigninTwitter } =
-    useContext(AuthContext);
+  const {
+    handleSigninGoogle,
+    setUser,
+    setErrorMessage,
+    errorMessage,
+    handleSigninTwitter,
+    handleCreateAccount,
+    handleProfileUpdate,
+  } = useContext(AuthContext);
+  
   // Handle Google Login Functionality
   const handleGoogleLogin = () => {
     handleSigninGoogle()
@@ -33,11 +49,53 @@ const Register = () => {
       .then((result) => setUser(result.user))
       .catch((error) => setErrorMessage(error));
   };
-  // const regex =
-  //   /^(?=.*[a-z])(?=.*[A-Z])(?=(.*\d){2,})(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+
+  // Handle Register Form
+  const handleRegisterSubmit = (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const email = event.target.email.value;
+    const photo = event.target.photo.value;
+    const password = event.target.password.value;
+
+    // Check password validation
+    const CheckPassword = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z]{6}$/;
+    if (!CheckPassword.test(password)) {
+      return setErrorMessage(
+        "Must be used 6 characters, one capital, and one lowercase letter"
+      );
+    }
+
+    handleCreateAccount(email, password)
+      .then((result) => {
+        setUser(result.user);
+        handleProfileUpdate({
+          displayName: name,
+          photoURL: photo,
+        });
+      })
+      .catch((error) => {
+        setErrorMessage(error.message.slice(22, 44));
+      });
+  };
 
   return (
     <div>
+      <Helmet>
+        <title>Register | React App</title>
+        <link rel="canonical" href="/register" />
+      </Helmet>
+      <div className="w-11/12 mx-auto space-y-5 mt-4">
+        {errorMessage && (
+          <Alert withBg={true} color="error">
+            <div className="flex gap-3">
+              <AlertIcon />
+              <p>{errorMessage}</p>
+            </div>
+            <AlertDismiss onClick={() => setErrorMessage(null)} />
+          </Alert>
+        )}
+      </div>
       <Card className="max-w-sm mx-auto mt-12">
         <CardContent className="space-y-3">
           <CardHeader className="text-center">
@@ -64,7 +122,7 @@ const Register = () => {
             </Button>
           </div>
           <Divider>Or</Divider>
-          <form className="space-y-2">
+          <form onSubmit={handleRegisterSubmit} className="space-y-2">
             <fieldset className="space-y-1">
               <Label htmlFor="email">Full Name</Label>
               <div className="relative">
@@ -83,7 +141,7 @@ const Register = () => {
               <Label htmlFor="email">Email*</Label>
               <div className="relative">
                 <Input
-                  id="email"
+                  name="email"
                   type="email"
                   placeholder="Enter email"
                   className="ps-11"
@@ -111,7 +169,7 @@ const Register = () => {
               <Label htmlFor="password">Password*</Label>
               <div className="relative">
                 <Input
-                  id="password"
+                  name="password"
                   placeholder="Enter password"
                   type="password"
                   className="ps-11"

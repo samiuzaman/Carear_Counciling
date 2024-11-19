@@ -15,9 +15,13 @@ import {
   NavbarItem,
   NavbarList,
 } from "keep-react";
-import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const NavbarComponent = () => {
+  const { user, handleSignOut } = useContext(AuthContext);
+  const navigate = useNavigate();
   return (
     <Navbar>
       <NavbarContainer className="mx-auto p-2 md:p-0 ">
@@ -33,21 +37,39 @@ const NavbarComponent = () => {
           <NavLink to="/about">About</NavLink>
         </NavbarList>
         <NavbarList>
-          <Dropdown placement="bottom-end">
-            <DropdownAction asChild>
-              <Avatar>
-                <AvatarImage src="/images/avatar/avatar-3.png" />
-                <AvatarFallback>KR</AvatarFallback>
-              </Avatar>
-            </DropdownAction>
-            <DropdownContent
-              align="end"
-              className="border border-metal-100 dark:border-metal-800 bg-primary-25"
-            >
-              <DropdownItem>Samiuzzaman Rahat</DropdownItem>
-            </DropdownContent>
-            <Button className="text-[#ffffff]">Log Out</Button>
-          </Dropdown>
+          {user && (
+            <Dropdown placement="bottom-end">
+              <DropdownAction asChild>
+                <Avatar>
+                  <AvatarImage
+                    referrerPolicy="no-referrer"
+                    src={user?.photoURL}
+                  />
+                  <AvatarFallback>KR</AvatarFallback>
+                </Avatar>
+              </DropdownAction>
+              <DropdownContent
+                align="end"
+                className="border border-metal-100 dark:border-metal-800 bg-primary-25"
+              >
+                <DropdownItem>{user?.displayName}</DropdownItem>
+              </DropdownContent>
+            </Dropdown>
+          )}
+          <div>
+            {user && user.email ? (
+              <Button onClick={handleSignOut} className="text-[#ffffff]">
+                Log Out
+              </Button>
+            ) : (
+              <Button
+                onClick={() => navigate("/login")}
+                className="text-[#ffffff]"
+              >
+                Log In
+              </Button>
+            )}
+          </div>
         </NavbarList>
         <NavbarCollapseBtn />
         <NavbarCollapse className="bg-primary-25 ">
