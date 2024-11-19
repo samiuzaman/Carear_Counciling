@@ -8,6 +8,7 @@ import ServiceDetails from "../Pages/ServiceDetails";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Forgate from "../Pages/Forgate";
+import Reviews from "../components/Reviews";
 
 const routes = createBrowserRouter([
   {
@@ -37,6 +38,20 @@ const routes = createBrowserRouter([
           );
           return service;
         },
+        children: [
+          {
+            path: "/secvice/:id",
+            element: <Reviews></Reviews>,
+            loader: async ({ params }) => {
+              const response = await fetch("../review.json");
+              const data = await response.json();
+              const review = data.find(
+                (review) => review.id === parseInt(params.id)
+              );
+              return review
+            },
+          },
+        ],
       },
       {
         path: "/myprofile",
@@ -52,8 +67,8 @@ const routes = createBrowserRouter([
       },
       {
         path: "/forgate",
-        element: <Forgate></Forgate>
-      }
+        element: <Forgate></Forgate>,
+      },
     ],
   },
 ]);

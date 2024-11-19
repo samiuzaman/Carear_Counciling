@@ -1,8 +1,7 @@
 import { Helmet } from "react-helmet-async";
-import { useLoaderData } from "react-router-dom";
+import { Outlet, useLoaderData } from "react-router-dom";
 import { Button, CardHeader, Divider } from "keep-react";
 import {
-  Table,
   TableBody,
   TableCell,
   TableHead,
@@ -11,9 +10,11 @@ import {
 } from "keep-react";
 import { FaStar } from "react-icons/fa";
 import Rating from "react-rating";
-import Reviews from "../components/Reviews";
+import { createContext, useState } from "react";
 
+export const ReviewDataContext = createContext();
 const ServiceDetails = () => {
+  const [review, setReview] = useState([]);
   const service = useLoaderData();
   const {
     id,
@@ -47,6 +48,8 @@ const ServiceDetails = () => {
             Counselor Name :
             <span className="font-medium text-[#2f3542] pl-2">{counselor}</span>
           </p>
+          <p className="card-text"> Target Audience: {target_audience}</p>
+          <p className="card-text"> Availability: {availability}</p>
           <p className="card-text"> Price: {pricing}</p>
 
           <Button className="w-28">Apply Now</Button>
@@ -92,7 +95,9 @@ const ServiceDetails = () => {
       </div>
       <Divider />
       <div>
-        <Reviews></Reviews>
+        <ReviewDataContext.Provider value={[review, setReview]}>
+          <Outlet></Outlet>
+        </ReviewDataContext.Provider>
       </div>
     </div>
   );

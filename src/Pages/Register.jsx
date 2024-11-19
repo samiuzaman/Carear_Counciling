@@ -33,7 +33,7 @@ const Register = () => {
     handleCreateAccount,
     handleProfileUpdate,
   } = useContext(AuthContext);
-  
+
   // Handle Google Login Functionality
   const handleGoogleLogin = () => {
     handleSigninGoogle()
@@ -57,6 +57,8 @@ const Register = () => {
     const email = event.target.email.value;
     const photo = event.target.photo.value;
     const password = event.target.password.value;
+
+    setErrorMessage(null);
 
     // Check password validation
     const CheckPassword = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z]{6}$/;
