@@ -14,13 +14,11 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const Reviews = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
   const [reviews, setReviews] = useContext(ReviewDataContext);
   const currentReview = useLoaderData();
   useEffect(() => {
     setReviews([...reviews, currentReview]);
-  }, [setReviews]);
-  const { name, image, review_text } = currentReview;
+  }, []);
   const handleCommentBox = (event) => {
     event.preventDefault();
     const comment = event.target.comment.value;
@@ -31,7 +29,7 @@ const Reviews = () => {
     };
     setReviews([...reviews, newReview]);
   };
-  console.log(reviews);
+  
   return (
     <div className="w-11/12 my-12">
       <h2 className="text-[#333333] text-2xl font-semibold pl-6">

@@ -15,13 +15,12 @@ import {
 import { Envelope, Lock } from "phosphor-react";
 import { useContext } from "react";
 import { FaGoogle, FaTwitter } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const {
-    user,
     setUser,
     setErrorMessage,
     errorMessage,
@@ -29,13 +28,16 @@ const Login = () => {
     handleSigninTwitter,
     handleSigninEmailPassword,
   } = useContext(AuthContext);
- 
+  const navigate = useNavigate();
+  const location = useLocation();
+  
 
   // Handle Google Login Functionality
   const handleGoogleLogin = () => {
     handleSigninGoogle()
       .then((result) => {
         setUser(result.user);
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => setErrorMessage(error.message));
   };
@@ -43,7 +45,10 @@ const Login = () => {
   // Handle Twitter Login Functionality
   const handleTwitterLogin = () => {
     handleSigninTwitter()
-      .then((result) => setUser(result.user))
+      .then((result) => {
+        setUser(result.user);
+        navigate(location?.state ? location.state : "/");
+      })
       .catch((error) => setErrorMessage(error));
   };
 
@@ -62,7 +67,10 @@ const Login = () => {
     }
 
     handleSigninEmailPassword(email, password)
-      .then((result) => setUser(result.user))
+      .then((result) => {
+        setUser(result.user);
+        navigate(location?.state ? location.state : "/");
+      })
       .catch((error) => setErrorMessage(error.message.slice(22, 42)));
   };
 

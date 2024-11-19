@@ -9,6 +9,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Forgate from "../Pages/Forgate";
 import Reviews from "../components/Reviews";
+import PrivetRoute from "../PrivetRoute/PrivetRoute";
 
 const routes = createBrowserRouter([
   {
@@ -29,7 +30,11 @@ const routes = createBrowserRouter([
       },
       {
         path: "/secvice/:id",
-        element: <ServiceDetails></ServiceDetails>,
+        element: (
+          <PrivetRoute>
+            <ServiceDetails></ServiceDetails>
+          </PrivetRoute>
+        ),
         loader: async ({ params }) => {
           const response = await fetch("../carear.json");
           const data = await response.json();
@@ -48,7 +53,7 @@ const routes = createBrowserRouter([
               const review = data.find(
                 (review) => review.id === parseInt(params.id)
               );
-              return review
+              return review;
             },
           },
         ],

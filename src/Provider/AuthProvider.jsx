@@ -20,12 +20,6 @@ const AuthProvider = ({ children }) => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  if (loading) {
-    <div className="loader">
-      <Spinner color="success" />
-    </div>;
-  }
-
   // Login With Google
   const googleProvider = new GoogleAuthProvider();
   const handleSigninGoogle = () => {
@@ -72,8 +66,9 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
-    setLoading(false);
+
     return () => {
       unsubcribe();
     };
