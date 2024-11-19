@@ -17,7 +17,7 @@ import {
 import { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-import { Image } from "phosphor-react";
+import { MdPerson2 } from "react-icons/md";
 
 const NavbarComponent = () => {
   const { user, handleSignOut } = useContext(AuthContext);
@@ -47,7 +47,7 @@ const NavbarComponent = () => {
                     src={user?.photoURL}
                   />
                   <AvatarFallback>
-                    <Image className="text-2xl" />
+                    <MdPerson2 className="text-3xl" />
                   </AvatarFallback>
                 </Avatar>
               </DropdownAction>
@@ -83,7 +83,7 @@ const NavbarComponent = () => {
                     referrerPolicy="no-referrer"
                     src={user?.photoURL}
                   />
-                  <Image className="text-2xl" />
+                  <MdPerson2 className="text-3xl" />
                 </Avatar>
                 <div>
                   <p>{user?.displayName}</p>

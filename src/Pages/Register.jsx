@@ -64,9 +64,11 @@ const Register = () => {
       );
     }
 
+    // Create Account with email and password
     handleCreateAccount(email, password)
       .then((result) => {
         setUser(result.user);
+        // Profile Update
         handleProfileUpdate({
           displayName: name,
           photoURL: photo,

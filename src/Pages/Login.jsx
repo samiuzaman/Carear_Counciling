@@ -27,10 +27,10 @@ const Login = () => {
     handleSigninGoogle,
     handleSigninTwitter,
     handleSigninEmailPassword,
+    emailRef,
   } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  
 
   // Handle Google Login Functionality
   const handleGoogleLogin = () => {
@@ -66,6 +66,7 @@ const Login = () => {
       );
     }
 
+    // Sign in with emaill & password
     handleSigninEmailPassword(email, password)
       .then((result) => {
         setUser(result.user);

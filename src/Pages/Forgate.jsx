@@ -9,7 +9,6 @@ import {
   CardTitle,
   Input,
   InputIcon,
-  Label,
 } from "keep-react";
 import { Envelope } from "phosphor-react";
 import { useContext } from "react";
@@ -24,6 +23,7 @@ const Forgate = () => {
     setSuccessMessage,
     handleResetPassword,
   } = useContext(AuthContext);
+ 
 
   const handleForgateForm = (event) => {
     event.preventDefault();
@@ -71,18 +71,17 @@ const Forgate = () => {
       <Card className="max-w-sm mx-auto mt-12">
         <CardContent className="space-y-3">
           <CardHeader className="text-center">
-            <CardTitle>Find Your Account</CardTitle>
-            <p>Please enter your email address to search for your account.</p>
+            <CardTitle>Forgotten your password?</CardTitle>
+            <p className="mt-4">Enter your email to reset your password</p>
           </CardHeader>
           <form onSubmit={handleForgateForm} className="space-y-2">
-            <fieldset className="space-y-1">
-              <Label htmlFor="email">Email*</Label>
+            <fieldset className="space-y-3">
               <div className="relative">
                 <Input
                   name="email"
                   type="email"
                   placeholder="Enter email"
-                  className="ps-11"
+                  className="ps-11 mt-4"
                 />
                 <InputIcon>
                   <Envelope size={19} color="#AFBACA" />
@@ -90,7 +89,7 @@ const Forgate = () => {
               </div>
             </fieldset>
             <Button type="submit" className="!mt-3 block w-full bg-[#4E21FF]">
-              Send Reset Verification
+              Reset Password
             </Button>
           </form>
           <div className="text-center"></div>
