@@ -31,7 +31,7 @@ a.active {
   @apply flex flex-col justify-center items-center h-[75vh] px-12;
 }
 .card-text {
-  @apply text-base font-normal text-[#2f3542] ;
+  @apply text-base font-normal text-[#2f3542];
 }
 .details-card-container {
   @apply flex flex-col md:flex-row justify-center items-center;
@@ -39,6 +39,12 @@ a.active {
 .details-card-Itmes {
   @apply h-96 w-full md:w-9/12 lg:w-2/3 space-y-3 bg-[#f1f2f6] flex flex-col justify-center rounded-b-xl lg:rounded-b-none lg:rounded-r-xl pl-6;
 }
-.loader{
-  @apply min-h-screen w-full flex justify-center items-center 
+.loader {
+  @apply min-h-screen w-full flex justify-center items-center;
+}
+.about-heading {
+  @apply text-4xl text-black font-bold mx-auto text-center my-5;
+}
+.about-container {
+  @apply flex items-center bg-aboutbg bg-cover bg-no-repeat bg-center flex-col md:flex-row;
 }
