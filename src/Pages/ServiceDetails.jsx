@@ -72,11 +72,11 @@ const ServiceDetails = () => {
         </TableHeader>
         <TableBody>
           <TableRow>
-            <TableCell className="w-60">{duration}</TableCell>
-            <TableCell className="w-14">{category}</TableCell>
-            <TableCell className="w-36 md:w-44 flex flex-col md:flex-row gap-2">
+            <TableCell className="w-64">{duration}</TableCell>
+            <TableCell className="w-12">{category}</TableCell>
+            <TableCell className="w-32 md:w-44 flex flex-col md:flex-row items-center gap-2">
               <Rating
-                className="text-lg"
+                className="text-sm md:text-md"
                 initialRating={rating}
                 emptySymbol={<FaStar className="text-metal-400" />}
                 fullSymbol={<FaStar className="text-warning-400" />}

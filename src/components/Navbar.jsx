@@ -83,7 +83,9 @@ const NavbarComponent = () => {
                     referrerPolicy="no-referrer"
                     src={user?.photoURL}
                   />
-                  <MdPerson2 className="text-3xl" />
+                  <AvatarFallback>
+                    <MdPerson2 className="text-3xl" />
+                  </AvatarFallback>
                 </Avatar>
                 <div>
                   <p>{user?.displayName}</p>

@@ -79,7 +79,6 @@ const Login = () => {
     event.preventDefault();
     const email = emailRef.current.value;
     navigate(`forgote?email=${email}`);
-    console.log(email);
   };
 
   return (

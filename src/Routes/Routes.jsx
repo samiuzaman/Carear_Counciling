@@ -10,6 +10,7 @@ import Register from "../Pages/Register";
 import Forgate from "../Pages/Forgate";
 import Reviews from "../components/Reviews";
 import PrivetRoute from "../PrivetRoute/PrivetRoute";
+import About from "../Pages/About";
 
 const routes = createBrowserRouter([
   {
@@ -65,6 +66,15 @@ const routes = createBrowserRouter([
             <MyProfile></MyProfile>
           </PrivetRoute>
         ),
+      },
+      {
+        path: "/about",
+        element: (
+          <PrivetRoute>
+            <About></About>
+          </PrivetRoute>
+        ),
+        loader: () => fetch("about.json"),
       },
       {
         path: "/login",

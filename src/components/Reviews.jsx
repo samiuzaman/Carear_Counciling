@@ -31,7 +31,7 @@ const Reviews = () => {
   };
   
   return (
-    <div className="w-11/12 my-12">
+    <div className="w-11/12 mx-auto my-12">
       <h2 className="text-[#333333] text-2xl font-semibold pl-6">
         This is Review Section
       </h2>

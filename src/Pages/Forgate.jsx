@@ -30,7 +30,6 @@ const Forgate = () => {
 
   let [searchParams, setSearchParams] = useSearchParams();
   const email = searchParams.get("email");
-  console.log(email);
 
   const handleForgateForm = (event) => {
     event.preventDefault();

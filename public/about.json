@@ -1,0 +1,47 @@
+[
+  {
+    "title": "About Us",
+    "hero_image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3",
+    "description": "Welcome to our Career Counseling Platform! Our mission is to empower individuals to achieve their professional goals by providing personalized guidance, resources, and support. Whether you're just starting your career, looking for a change, or aiming to advance in your field, we're here to help every step of the way.",
+    "vision": "To become a trusted partner in helping individuals unlock their true potential and build fulfilling careers.",
+    "mission": "To provide accessible, expert-driven career guidance services tailored to the unique needs of every individual.",
+    "values": [
+      "Empowerment: Helping individuals take charge of their career journey.",
+      "Personalization: Offering advice and solutions based on unique aspirations and challenges.",
+      "Integrity: Ensuring transparency and honesty in all our services.",
+      "Excellence: Striving to deliver top-notch guidance and resources."
+    ],
+    "services_highlight": [
+      "Career Counseling Sessions tailored to your goals.",
+      "Resume Reviews to make your profile stand out.",
+      "Job Interview Preparation for confidence and success.",
+      "Freelancing Tips to help you start your own journey.",
+      "Leadership Development to unlock your full potential."
+    ],
+    "team": [
+      {
+        "name": "Sarah Miller",
+        "role": "Career Counselor",
+        "photo": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3",
+        "bio": "Sarah brings over a decade of experience in career coaching and has helped thousands of clients navigate their professional paths with confidence."
+      },
+      {
+        "name": "Tom Harris",
+        "role": "Career Strategist",
+        "photo": "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3",
+        "bio": "Tom specializes in career transitions and strategic planning, ensuring that clients find meaningful roles that align with their passions."
+      },
+      {
+        "name": "Olivia Taylor",
+        "role": "Soft Skills Trainer",
+        "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3",
+        "bio": "Olivia is an expert in enhancing workplace communication and leadership skills, helping professionals excel in their careers."
+      }
+    ],
+    "contact_details": {
+      "email": "support@careercounseling.com",
+      "phone": "+1-800-123-4567",
+      "address": "123 Career Street, Suite 456, New York, NY, USA"
+    }
+  }
+]

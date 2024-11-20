@@ -15,7 +15,7 @@ import {
 import { Envelope, Image, Lock, Person } from "phosphor-react";
 import { useContext } from "react";
 import { FaGoogle, FaTwitter } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 
@@ -29,12 +29,14 @@ const Register = () => {
     handleCreateAccount,
     handleProfileUpdate,
   } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   // Handle Google Login Functionality
   const handleGoogleLogin = () => {
     handleSigninGoogle()
       .then((result) => {
         setUser(result.user);
+        navigate("/");
       })
       .catch((error) => setErrorMessage(error.message));
   };
@@ -42,7 +44,10 @@ const Register = () => {
   // Handle Twitter Login Functionality
   const handleTwitterLogin = () => {
     handleSigninTwitter()
-      .then((result) => setUser(result.user))
+      .then((result) => {
+        setUser(result.user);
+        navigate("/");
+      })
       .catch((error) => setErrorMessage(error));
   };
 
@@ -73,6 +78,7 @@ const Register = () => {
           displayName: name,
           photoURL: photo,
         });
+        navigate("/");
       })
       .catch((error) => {
         setErrorMessage(error.message.slice(22, 44));
