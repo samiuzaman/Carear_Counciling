@@ -75,6 +75,13 @@ const Login = () => {
       .catch((error) => setErrorMessage(error.message.slice(22, 42)));
   };
 
+  const handleForgatePassword = (event) => {
+    event.preventDefault();
+    const email = emailRef.current.value;
+    navigate(`forgote?email=${email}`);
+    console.log(email);
+  };
+
   return (
     <div>
       <Helmet>
@@ -125,6 +132,7 @@ const Login = () => {
                 <Input
                   name="email"
                   type="email"
+                  ref={emailRef}
                   placeholder="Enter email"
                   className="ps-11"
                 />
@@ -147,9 +155,9 @@ const Login = () => {
                 </InputIcon>
               </div>
             </fieldset>
-            <Link to="/forgate">
+            <div onClick={handleForgatePassword}>
               <Label htmlFor="password">Forgot Password</Label>
-            </Link>
+            </div>
             <Button type="submit" className="!mt-3 block w-full bg-[#4E21FF]">
               Log in
             </Button>

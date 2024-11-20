@@ -14,6 +14,7 @@ import { Envelope } from "phosphor-react";
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../Provider/AuthProvider";
+import { useSearchParams } from "react-router-dom";
 
 const Forgate = () => {
   const {
@@ -22,8 +23,14 @@ const Forgate = () => {
     successMessage,
     setSuccessMessage,
     handleResetPassword,
+    emailRef,
   } = useContext(AuthContext);
- 
+
+  // const email = emailRef?.current?.value;
+
+  let [searchParams, setSearchParams] = useSearchParams();
+  const email = searchParams.get("email");
+  console.log(email);
 
   const handleForgateForm = (event) => {
     event.preventDefault();
@@ -80,6 +87,7 @@ const Forgate = () => {
                 <Input
                   name="email"
                   type="email"
+                  defaultValue={email}
                   placeholder="Enter email"
                   className="ps-11 mt-4"
                 />

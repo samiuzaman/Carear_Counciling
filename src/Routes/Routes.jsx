@@ -75,7 +75,7 @@ const routes = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/forgate",
+        path: "/login/forgote",
         element: <Forgate></Forgate>,
       },
     ],

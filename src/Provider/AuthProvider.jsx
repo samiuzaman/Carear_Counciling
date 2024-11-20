@@ -10,7 +10,7 @@ import {
   sendPasswordResetEmail,
 } from "firebase/auth";
 import auth from "../Firebase/firebase.init";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
@@ -18,6 +18,7 @@ const AuthProvider = ({ children }) => {
   const [successMessage, setSuccessMessage] = useState();
   const [errorMessage, setErrorMessage] = useState(null);
   const [loading, setLoading] = useState(true);
+  const emailRef = useRef(null);
 
   // Login With Google
   const googleProvider = new GoogleAuthProvider();
@@ -53,6 +54,14 @@ const AuthProvider = ({ children }) => {
 
   // Profile Update
   const handleProfileUpdate = (updatedData) => {
+    const { displayName, photoURL } = updatedData;
+    setUser((prev) => {
+      return {
+        ...prev,
+        displayName,
+        photoURL,
+      };
+    });
     return updateProfile(auth.currentUser, updatedData);
   };
 
@@ -89,6 +98,7 @@ const AuthProvider = ({ children }) => {
     handleSignOut,
     handleProfileUpdate,
     handleResetPassword,
+    emailRef,
   };
 
   return <AuthContext.Provider value={info}>{children}</AuthContext.Provider>;
