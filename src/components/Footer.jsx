@@ -2,7 +2,10 @@ import {
   FaEnvelope,
   FaFacebook,
   FaLinkedin,
+  FaPhone,
+  FaPhoneAlt,
   FaPinterest,
+  FaRegAddressCard,
   FaTwitter,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -25,7 +28,7 @@ const Footer = () => {
             </p>
           </footer>
 
-          <div className="w-full lg:w-1/2 mx-auto flex justify-between md:justify-around">
+          <div className="w-full lg:w-1/2 mx-auto flex justify-between gap-2 md:justify-around">
             <footer>
               <h4 className="mb-3 text-body-3 text-xl font-semibold text-metal-900 dark:text-white">
                 Services
@@ -43,12 +46,15 @@ const Footer = () => {
                 Contact Us
               </h4>
               <ul className="flex flex-col gap-3 text-body-3 font-normal text-metal-600 dark:text-metal-300">
-                <Link
-                  to="https://mail.google.com/"
-                  className="flex items-center gap-2"
-                >
-                  <FaEnvelope /> Gmail
-                </Link>
+                <li className="flex items-center gap-2">
+                  <FaRegAddressCard /> Box 31, Allentown, PA 181
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaEnvelope /> info@careerclimb.com
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaPhoneAlt /> +8801234567890
+                </li>
                 <Link
                   to="https://www.facebook.com/"
                   className="flex items-center gap-2"
@@ -65,14 +71,7 @@ const Footer = () => {
                 </Link>
                 <Link to="https://x.com/" className="flex items-center gap-2">
                   <FaTwitter />
-                  Twitter
-                </Link>
-                <Link
-                  to="https://www.pinterest.com/"
-                  className="flex items-center gap-2"
-                >
-                  <FaPinterest />
-                  Pinterest
+                  careerclimb
                 </Link>
               </ul>
             </footer>
