@@ -13,11 +13,12 @@ import {
   Label,
 } from "keep-react";
 import { Envelope, Image, Lock, Person } from "phosphor-react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FaGoogle, FaTwitter } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 
 const Register = () => {
   const {
@@ -30,6 +31,7 @@ const Register = () => {
     handleProfileUpdate,
   } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [show, setShow] = useState(false);
 
   // Handle Google Login Functionality
   const handleGoogleLogin = () => {
@@ -62,10 +64,13 @@ const Register = () => {
     setErrorMessage(null);
 
     // Check password validation
-    const CheckPassword = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z]{6}$/;
+    if (password.length < 6) {
+      return setErrorMessage(" Password must be used 6 characters");
+    }
+    const CheckPassword = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d@$!%*?&]{6,}$/;
     if (!CheckPassword.test(password)) {
       return setErrorMessage(
-        "Must be used 6 characters, one capital, and one lowercase letter"
+        "Must be used one capital, and one lowercase letter"
       );
     }
 
@@ -177,12 +182,18 @@ const Register = () => {
                 <Input
                   name="password"
                   placeholder="Enter password"
-                  type="password"
+                  type={show ? "text" : "password"}
                   className="ps-11"
                 />
                 <InputIcon>
                   <Lock size={19} color="#AFBACA" />
                 </InputIcon>
+                <span
+                  onClick={() => setShow(!show)}
+                  className="absolute top-3 right-4 text-xl"
+                >
+                  {show ? <IoIosEyeOff /> : <IoIosEye />}
+                </span>
               </div>
             </fieldset>
 

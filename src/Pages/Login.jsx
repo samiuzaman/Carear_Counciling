@@ -13,11 +13,12 @@ import {
   Label,
 } from "keep-react";
 import { Envelope, Lock } from "phosphor-react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FaGoogle, FaTwitter } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 
 const Login = () => {
   const {
@@ -31,6 +32,7 @@ const Login = () => {
   } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  const [show, setShow] = useState(false);
 
   // Handle Google Login Functionality
   const handleGoogleLogin = () => {
@@ -59,10 +61,10 @@ const Login = () => {
     const password = event.target.password.value;
     setErrorMessage(null);
     // Check password validation
-    const CheckPassword = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z]{6}$/;
+    const CheckPassword = /^(?=.*[a-z])(?=.*[A-Z])[A-Za-z\d@$!%*?&]{6,}$/;
     if (!CheckPassword.test(password)) {
       return setErrorMessage(
-        "Must be used 6 characters, one capital, and one lowercase letter"
+        "Must be used one capital, and one lowercase letter"
       );
     }
 
@@ -146,12 +148,18 @@ const Login = () => {
                 <Input
                   name="password"
                   placeholder="Enter password"
-                  type="password"
+                  type={show ? "text" : "password"}
                   className="ps-11"
                 />
                 <InputIcon>
                   <Lock size={19} color="#AFBACA" />
                 </InputIcon>
+                <span
+                  onClick={() => setShow(!show)}
+                  className="absolute top-3 right-4 text-xl"
+                >
+                  {show ? <IoIosEyeOff /> : <IoIosEye />}
+                </span>
               </div>
             </fieldset>
             <div onClick={handleForgatePassword}>
