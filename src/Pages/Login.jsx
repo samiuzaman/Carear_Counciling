@@ -84,7 +84,7 @@ const Login = () => {
   return (
     <div>
       <Helmet>
-        <title>Login | React App</title>
+        <title>Login | Career Climb</title>
         <link rel="canonical" href="/login" />
       </Helmet>
       <div className="w-11/12 mx-auto space-y-5 mt-4">

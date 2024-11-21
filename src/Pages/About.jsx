@@ -10,7 +10,7 @@ const About = () => {
   return (
     <div>
       <Helmet>
-        <title>About | React App</title>
+        <title>About | Career Climb</title>
         <link rel="canonical" href="//about" />
       </Helmet>
       <h2 className="about-heading">{data.title}</h2>

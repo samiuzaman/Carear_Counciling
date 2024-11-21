@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="w-11/12 lg:w-5/6 mx-auto">
       <Helmet>
-        <title>Home | React App</title>
+        <title>Home | Career Climb</title>
         <link rel="canonical" href="/" />
       </Helmet>
       <div className="my-12">

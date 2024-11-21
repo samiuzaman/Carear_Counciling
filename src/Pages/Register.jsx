@@ -88,7 +88,7 @@ const Register = () => {
   return (
     <div>
       <Helmet>
-        <title>Register | React App</title>
+        <title>Register | Career Climb</title>
         <link rel="canonical" href="/register" />
       </Helmet>
       <div className="w-11/12 mx-auto space-y-5 mt-4">

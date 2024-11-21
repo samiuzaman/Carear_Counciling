@@ -41,7 +41,7 @@ const ServiceDetails = () => {
   return (
     <div className="w-11/12 md:8/12 lg:w-5/6 mx-auto my-12">
       <Helmet>
-        <title>Details | React App</title>
+        <title>Details | Career Climb</title>
         <link rel="canonical" href={`secvice/${id}`} />
       </Helmet>
       <div className="details-card-container">

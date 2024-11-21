@@ -17,7 +17,7 @@ const MyProfile = () => {
   return (
     <div>
       <Helmet>
-        <title>My Profile | React App</title>
+        <title>My Profile | Career Climb</title>
         <link rel="canonical" href="/myprofile" />
       </Helmet>
       <div className="myProfile-container">

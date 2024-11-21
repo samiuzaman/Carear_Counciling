@@ -48,7 +48,7 @@ const Forgate = () => {
   return (
     <div>
       <Helmet>
-        <title>Forget | React App</title>
+        <title>Forget | Career Climb</title>
         <link rel="canonical" href="/login/forgote" />
       </Helmet>
 

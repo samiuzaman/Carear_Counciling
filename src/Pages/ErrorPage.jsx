@@ -6,7 +6,7 @@ const ErrorPage = () => {
   return (
     <div className="h-screen flex flex-col justify-center items-center">
       <Helmet>
-        <title>Error | React App</title>
+        <title>Error | Career Climb</title>
         <link rel="canonical" href="/" />
       </Helmet>
       <h2 className="text-4xl text-black font-bold">{error.status}</h2>
