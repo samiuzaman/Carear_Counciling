@@ -3,16 +3,16 @@ import {
   AvatarFallback,
   AvatarImage,
   Button,
-  Dropdown,
-  DropdownAction,
-  DropdownContent,
-  DropdownItem,
   Navbar,
   NavbarBrand,
   NavbarCollapse,
   NavbarCollapseBtn,
   NavbarContainer,
   NavbarList,
+  Tooltip,
+  TooltipAction,
+  TooltipContent,
+  TooltipProvider,
 } from "keep-react";
 import { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
@@ -39,23 +39,26 @@ const NavbarComponent = () => {
         </NavbarList>
         <NavbarList>
           {user && (
-            <Dropdown placement=" bottom-end">
-              <DropdownAction asChild>
-                <Avatar>
-                  <AvatarImage
-                    referrerPolicy="no-referrer"
-                    src={user?.photoURL}
-                  />
-                  <AvatarFallback>
-                    <MdPerson2 className="text-3xl" />
-                  </AvatarFallback>
-                </Avatar>
-              </DropdownAction>
-              <DropdownContent className="border border-metal-100 dark:border-metal-800 bg-primary-25">
-                <DropdownItem> {user?.displayName}</DropdownItem>
-                <DropdownItem> {user?.email}</DropdownItem>
-              </DropdownContent>
-            </Dropdown>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipAction asChild>
+                  <Avatar>
+                    <img referrerPolicy="no-referrer" src={user?.photoURL} />
+                    <AvatarFallback>
+                      <MdPerson2 className="text-3xl" />
+                    </AvatarFallback>
+                  </Avatar>
+                </TooltipAction>
+                <TooltipContent side="top">
+                  <p className="text-lg font-medium text-white">
+                    {user?.displayName}
+                  </p>
+                  <p className="text-base font-medium text-white">
+                    {user?.email}
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           )}
           <div>
             {user && user.email ? (
