@@ -4,8 +4,8 @@ import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import routes from "./Routes/Routes";
 import { HelmetProvider } from "react-helmet-async";
-import { ToastContainer } from "react-toastify";
 import AuthProvider from "./Provider/AuthProvider";
+import { ToastWrapper } from "keep-react";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -13,7 +13,7 @@ createRoot(document.getElementById("root")).render(
       <AuthProvider>
         <RouterProvider router={routes}></RouterProvider>
       </AuthProvider>
-      <ToastContainer></ToastContainer>
+      <ToastWrapper richColors={true} />
     </HelmetProvider>
   </StrictMode>
 );

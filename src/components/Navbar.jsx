@@ -87,7 +87,7 @@ const NavbarComponent = () => {
                     src={user?.photoURL}
                   />
                   <AvatarFallback>
-                    <MdPerson2 className="text-3xl" />
+                    <MdPerson2 className="text-3xl"/>
                   </AvatarFallback>
                 </Avatar>
                 <div>

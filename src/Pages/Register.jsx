@@ -11,6 +11,7 @@ import {
   Input,
   InputIcon,
   Label,
+  toast,
 } from "keep-react";
 import { Envelope, Image, Lock, Person } from "phosphor-react";
 import { useContext, useState } from "react";
@@ -22,36 +23,14 @@ import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 
 const Register = () => {
   const {
-    handleSigninGoogle,
     setUser,
     setErrorMessage,
     errorMessage,
-    handleSigninTwitter,
     handleCreateAccount,
     handleProfileUpdate,
   } = useContext(AuthContext);
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
-
-  // Handle Google Login Functionality
-  const handleGoogleLogin = () => {
-    handleSigninGoogle()
-      .then((result) => {
-        setUser(result.user);
-        navigate("/");
-      })
-      .catch((error) => setErrorMessage(error.message));
-  };
-
-  // Handle Twitter Login Functionality
-  const handleTwitterLogin = () => {
-    handleSigninTwitter()
-      .then((result) => {
-        setUser(result.user);
-        navigate("/");
-      })
-      .catch((error) => setErrorMessage(error));
-  };
 
   // Handle Register Form
   const handleRegisterSubmit = (event) => {
@@ -83,6 +62,7 @@ const Register = () => {
           displayName: name,
           photoURL: photo,
         });
+        toast.success(`Hello, ${name}! Let's make your dreams a reality`);
         navigate("/");
       })
       .catch((error) => {
@@ -112,26 +92,7 @@ const Register = () => {
           <CardHeader className="text-center">
             <CardTitle>Register</CardTitle>
           </CardHeader>
-          <div className="flex items-center justify-between gap-3">
-            <Button
-              onClick={handleGoogleLogin}
-              variant="outline"
-              color="secondary"
-              className="w-full"
-            >
-              <FaGoogle size={20} className="mr-1.5 text-[#4285F4] font-bold" />
-              Google
-            </Button>
-            <Button
-              onClick={handleTwitterLogin}
-              variant="outline"
-              color="secondary"
-              className="w-full"
-            >
-              <FaTwitter size={20} className="mr-1.5 text-[#1DA1F2]" />
-              Twitter
-            </Button>
-          </div>
+
           <Divider>Or</Divider>
           <form onSubmit={handleRegisterSubmit} className="space-y-2">
             <fieldset className="space-y-1">

@@ -11,6 +11,7 @@ import {
   Input,
   InputIcon,
   Label,
+  toast,
 } from "keep-react";
 import { Envelope, Lock } from "phosphor-react";
 import { useContext, useState } from "react";
@@ -39,6 +40,7 @@ const Login = () => {
     handleSigninGoogle()
       .then((result) => {
         setUser(result.user);
+        toast.success(`Login Successful`);
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => setErrorMessage(error.message));
@@ -49,6 +51,7 @@ const Login = () => {
     handleSigninTwitter()
       .then((result) => {
         setUser(result.user);
+        toast.success(`Login Successful`);
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => setErrorMessage(error));
@@ -72,6 +75,7 @@ const Login = () => {
     handleSigninEmailPassword(email, password)
       .then((result) => {
         setUser(result.user);
+        toast.success(`Login Successful`);
         navigate(location?.state ? location.state : "/");
       })
       .catch((error) => setErrorMessage(error.message.slice(22, 42)));

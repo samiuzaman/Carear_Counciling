@@ -1,17 +1,30 @@
-import { Button, Divider, Input, Label } from "keep-react";
-import { useContext } from "react";
+import { Button, Divider, Input, Label, toast } from "keep-react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 
 const MyProfile = () => {
   const { user, handleProfileUpdate } = useContext(AuthContext);
+  const [disableButton, setDisableButton] = useState(true);
+  console.log(user);
   const handleUpdateProfile = (event) => {
     event.preventDefault();
     const name = event.target.name.value;
     const photo = event.target.photo.value;
+
+    if (name.length === 0 && photo.length === 0) {
+      setDisableButton(true);
+      return;
+    }
+    if (name.length >= 0 && photo.length >= 0) {
+      setDisableButton(false);
+    }
+    
     handleProfileUpdate({
-      displayName: name,
-      photoURL: photo,
+      displayName: name.length === 0 ? user.displayName : name,
+      photoURL: photo.length === 0 ? user.photoURL : photo,
+    }).then(() => {
+      toast.success("Profile Updated Successfully");
     });
   };
   return (
@@ -70,11 +83,8 @@ const MyProfile = () => {
                     />
                   </div>
                 </fieldset>
-                <Button
-                  type="submit"
-                  className="!mt-3 block w-full bg-[#4E21FF]"
-                >
-                  Update
+                <Button disabled className="!mt-3 block w-full bg-[#4E21FF]">
+                  Update Profile
                 </Button>
               </form>
             </div>

@@ -9,6 +9,7 @@ import {
   CardTitle,
   Input,
   InputIcon,
+  toast,
 } from "keep-react";
 import { Envelope } from "phosphor-react";
 import { useContext } from "react";
@@ -42,7 +43,7 @@ const Forgate = () => {
           "Your password reset request was successful. Please check your email for the next steps."
         );
       })
-      .catch((error) => setErrorMessage(error.message.slice(22, 42)));
+      .catch((error) => toast.error(error.message.slice(22, 42)));
   };
 
   return (
