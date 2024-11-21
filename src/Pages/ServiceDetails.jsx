@@ -37,20 +37,16 @@ const ServiceDetails = () => {
       </Helmet>
       <div className="details-card-container">
         <CardHeader>
-          <img
-            src={image}
-            className="h-96 w-full rounded-t-xl lg:rounded-t-none lg:rounded-tl-xl lg:rounded-bl-xl"
-          ></img>
+          <img src={image}></img>
         </CardHeader>
         <div className="details-card-Itmes">
-          <h2 className="text-4xl text-black font-bold ">{service_name}</h2>
-          <p className="card-text">
-            Counselor Name :
-            <span className="font-medium text-[#2f3542] pl-2">{counselor}</span>
+          <h2>{service_name}</h2>
+          <p>
+            Counselor Name :<span>{counselor}</span>
           </p>
-          <p className="card-text"> Target Audience: {target_audience}</p>
-          <p className="card-text"> Availability: {availability}</p>
-          <p className="card-text"> Price: {pricing}</p>
+          <p> Target Audience: {target_audience}</p>
+          <p> Availability: {availability}</p>
+          <p> Price: {pricing}</p>
 
           <Button className="w-28">Apply Now</Button>
         </div>
@@ -88,7 +84,7 @@ const ServiceDetails = () => {
       </div>
       <Divider />
       <div className="w-11/12 mdw-4/5 mx-auto my-8">
-        <h2 className="text-4xl underline font-semibold text-black text-center mb-6">
+        <h2 className="service-detail-about">
           About this Service
         </h2>
         <p className="text-[#202225] text-justify">{description}</p>

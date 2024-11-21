@@ -10,6 +10,7 @@ const Home = () => {
         <link rel="canonical" href="/" />
       </Helmet>
       <div className="my-12">
+        {/* App is Banner Component */}
         <App></App>
         <Outlet></Outlet>
       </div>

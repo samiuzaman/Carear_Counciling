@@ -1,31 +1,30 @@
 import { TbBulb } from "react-icons/tb";
 import { IoLayersOutline } from "react-icons/io5";
+import PropTypes from "prop-types";
 
 const AboutBanner = ({ aboutData }) => {
   const { heading, description, vision, mission } = aboutData;
   return (
     <div className="about-container">
       {/* First Section */}
-      <div className="w-full md:w-6/12 lg:w-7/12 bg-[#fafafae7] p-4 lg:p-0 lg:pl-10 lg:pr-6">
-        <h2 className="text-[#222D35] text-4xl font-semibold mb-6 leading-snug pt-12">
-          {heading}
-        </h2>
+      <div className="about-child-container">
+        <h2 className="about-banner-heading">{heading}</h2>
         <p>{description}</p>
-        <div className="flex flex-col lg:flex-row justify-around items-center gap-5 mt-6 py-16">
+        <div className="vission-mission-parent">
           {/* Vission Card */}
-          <div className="bg-[#ffffff] w-72 h-60 flex flex-col justify-center items-center py-8 px-5 text-center space-y-5">
+          <div className="mission-vission-div">
             <div>
               <TbBulb className="text-[#F71C52] text-5xl" />
             </div>
-            <h4 className="text-xl font-bold text-[#222D35]">Vission</h4>
+            <h4 className="mission-vission-headin">Vission</h4>
             <p>{vision}</p>
           </div>
           {/* Mission Card */}
-          <div className="bg-[#ffffff] w-72 h-60 flex flex-col justify-center items-center py-8 px-5 text-center space-y-5">
+          <div className="mission-vission-div">
             <div>
               <IoLayersOutline className="text-[#F71C52] text-5xl" />
             </div>
-            <h4 className="text-xl font-bold text-[#222D35]">Mission</h4>
+            <h4 className="mission-vission-headin">Mission</h4>
             <p>{mission}</p>
           </div>
         </div>
@@ -34,6 +33,9 @@ const AboutBanner = ({ aboutData }) => {
       <div></div>
     </div>
   );
+};
+AboutBanner.propTypes = {
+  aboutData: PropTypes.object,
 };
 
 export default AboutBanner;

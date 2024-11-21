@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader } from "keep-react";
+import PropTypes from "prop-types";
 
 const TeamCard = ({ aboutData }) => {
   const { photo, name, role, bio } = aboutData;
@@ -7,19 +8,23 @@ const TeamCard = ({ aboutData }) => {
       <CardHeader>
         <img src={photo} className="h-72 w-full "></img>
       </CardHeader>
-      <CardContent className="space-y-3 bg-[#f1f2f6]">
-        <h2 className="text-2xl text-black font-bold font-PlayfairDisplay ">
-          <span className="font-semibold text-[#2f3542]">Name:</span> {name}
+      <CardContent className="team-card">
+        <h2>
+          <span>Name:</span> {name}
         </h2>
-        <p className="card-text">
-          <span className="font-semibold text-[#2f3542]"> Role:</span> {role}
+        <p>
+          <span> Role:</span> {role}
         </p>
-        <p className="card-text text-justify">
-          <span className="font-semibold text-[#2f3542] ">Bio:</span> {bio}
+        <p>
+          <span>Bio:</span> {bio}
         </p>
       </CardContent>
     </Card>
   );
+};
+
+TeamCard.propTypes = {
+  aboutData: PropTypes.object,
 };
 
 export default TeamCard;

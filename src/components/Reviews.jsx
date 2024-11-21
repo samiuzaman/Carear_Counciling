@@ -32,8 +32,8 @@ const Reviews = () => {
   
   return (
     <div className="w-11/12 mx-auto my-12">
-      <h2 className="text-[#333333] text-2xl font-semibold pl-6">
-        This is Review Section
+      <h2 className="review-title">
+        Review
       </h2>
       <form
         onSubmit={handleCommentBox}
@@ -55,7 +55,7 @@ const Reviews = () => {
         {reviews?.map((review, index) => (
           <div
             key={index}
-            className="flex flex-col border border-metal-200 dark:border-metal-800 rounded-xl mx-[2.5%]"
+            className="review-input-container"
           >
             <CardContent>
               <div className="flex items-center gap-3 mb-4 ">

@@ -49,7 +49,7 @@ const Forgate = () => {
     <div>
       <Helmet>
         <title>Forget | React App</title>
-        <link rel="canonical" href="/login" />
+        <link rel="canonical" href="/login/forgote" />
       </Helmet>
 
       <div className="w-11/12 mx-auto space-y-5 mt-4">

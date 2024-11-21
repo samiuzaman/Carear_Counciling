@@ -1,3 +1,13 @@
+/* 
+*Table of Contents*
+1. setup custom things --> line 12 to 24
+2. Nav Section Code    -->
+3. Home Section Code -->
+4. Service Section Code -->
+4. Service Details Code -->
+5. About Section Code -->
+6. Footer Section Code -->
+*/
 /* Poppins Font CDN */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
@@ -17,10 +27,16 @@
 body {
   @apply font-Poppins;
 }
-
+.loader {
+  @apply min-h-screen w-full flex justify-center items-center;
+}
+/* Navbar active Route Design Start Here */
 a.active {
   @apply text-[#4E21FF] font-medium font-Lora lg:bg-metal-100 lg:px-5 lg:py-2 rounded-lg;
 }
+/* Navbar active Route Design Start Here */
+
+/* Home Slider Section Code Start Here */
 .slider-bg {
   @apply bg-cover bg-no-repeat bg-center bg-[#000000af] bg-blend-overlay flex flex-col justify-center items-center;
 }
@@ -30,21 +46,141 @@ a.active {
 .slider-context {
   @apply flex flex-col justify-center items-center h-[75vh] px-12;
 }
+/* Home Slider Section Code End Here */
+
+/* Home Service Section Code Start Here */
 .card-text {
   @apply text-base font-normal text-[#2f3542];
 }
+
+/* Home Service Section Code End Here */
+
+/* Login, Register & Forgotten Section Code Start Here */
+
+/* Login, Register & Forgotten Section Code End Here */
+
+/* Service Container section Code Start Here */
+.service-heading {
+  @apply text-3xl lg:text-5xl text-black font-bold text-center;
+}
+.service-card-layout {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-6;
+}
+/* Service Container section Code End Here */
+/* Service Card section Code Start Here */
+.service-card-title {
+  @apply text-xl text-black font-bold font-PlayfairDisplay;
+}
+/* Service Card section Code End Here */
+
+/* Service details section Code Start Here */
 .details-card-container {
   @apply flex flex-col md:flex-row justify-center items-center;
 }
+
+.details-card-container img {
+  @apply h-96 w-full rounded-t-xl lg:rounded-t-none lg:rounded-tl-xl lg:rounded-bl-xl;
+}
+
 .details-card-Itmes {
   @apply h-96 w-full md:w-9/12 lg:w-2/3 space-y-3 bg-[#f1f2f6] flex flex-col justify-center rounded-b-xl lg:rounded-b-none lg:rounded-r-xl pl-6;
 }
-.loader {
-  @apply min-h-screen w-full flex justify-center items-center;
+
+.details-card-Itmes h2 {
+  @apply text-4xl text-black font-bold;
 }
+.details-card-Itmes p {
+  @apply text-base font-normal text-[#2f3542];
+}
+.details-card-Itmes span {
+  @apply font-medium text-[#2f3542] pl-2;
+}
+.service-detail-about {
+  @apply text-4xl underline font-semibold text-black text-center mb-6;
+}
+/* Service details section Code End Here */
+
+/* Review Section Code start Here */
+.review-title {
+  @apply text-[#272727] text-2xl font-semibold pl-6;
+}
+.review-input-container {
+  @apply flex flex-col border border-metal-200 dark:border-metal-800 rounded-xl mx-[2.5%];
+}
+/* Review Section Code End Here */
+
+/* My Profile section Code Start Here */
+.myProfile-container {
+  @apply w-11/12 lg:w-4/5 mx-auto border-2 border-[#E3E5E8] rounded-xl shadow-lg p-3 lg:p-8 my-12 py-6 md:px-10;
+}
+.myProfile-container h3 {
+  @apply text-3xl font-semibold text-black;
+}
+.current-profile-div {
+  @apply w-full lg:w-1/2 space-y-5  lg:p-5;
+}
+.current-profile-div p {
+  @apply border-2 border-[#E3E5E8] bg-[#EFF2F5] py-3 pl-2 rounded-md;
+}
+.update-profile-div {
+  @apply w-full lg:w-1/2 border-t-2 md:border-t-0 pt-5 md:pt-0 lg:border-l-2 border-[#d5d6d8] lg:pl-6;
+}
+/* My Profile section Code End Here */
+
+/* About Banner Section Code Start Here */
 .about-heading {
   @apply text-4xl text-black font-bold mx-auto text-center my-5;
 }
 .about-container {
   @apply flex items-center bg-aboutbg bg-cover bg-no-repeat bg-center flex-col md:flex-row;
 }
+.about-banner-heading {
+  @apply text-[#222D35] text-4xl font-semibold mb-6 leading-snug pt-12;
+}
+.about-child-container {
+  @apply w-full md:w-6/12 lg:w-7/12 bg-[#fafafae7] p-4 lg:p-0 lg:pl-10 lg:pr-6;
+}
+.vission-mission-parent {
+  @apply flex flex-col lg:flex-row justify-around items-center gap-5 mt-6 py-16;
+}
+.mission-vission-div {
+  @apply bg-[#ffffff] w-72 h-60 flex flex-col justify-center items-center py-8 px-5 text-center space-y-5;
+}
+.mission-vission-headin {
+  @apply text-xl font-bold text-[#222D35];
+}
+/* About Banner Section Code End Here */
+
+/* About Parallax  Section Code Start Here */
+.parallax-container {
+  @apply w-11/12 mx-auto bg-[#EDF1FC] py-12 my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center text-center gap-5 rounded-xl shadow-lg space-y-10 md:space-y-0;
+}
+.parallax-child-div span {
+  @apply text-[#F62D5F] text-7xl font-Lora;
+}
+.parallax-child-div h4 {
+  @apply text-lg font-semibold my-3;
+}
+.parallax-child-div hp {
+  @apply text-lg font-semibold my-3;
+}
+/* About Parallax  Section Code End Here */
+
+/* About Team Card Section Code Start Here */
+.team-card-container {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-6;
+}
+.team-card {
+  @apply space-y-3 bg-[#f1f2f6];
+}
+.team-card h2 {
+  @apply text-2xl text-black font-bold font-PlayfairDisplay;
+}
+.team-card p {
+  @apply text-base font-normal text-[#2f3542] text-justify;
+}
+.team-card p span {
+  @apply font-semibold text-[#2f3542];
+}
+
+/* About Team Card Section Code End Here */
