@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 const TeamCard = ({ aboutData }) => {
   const { photo, name, role, bio } = aboutData;
   return (
-    <Card className="w-96">
+    <Card className="w-96 h-full">
       <CardHeader>
-        <img src={photo} className="h-72 w-full "></img>
+        <img src={photo} className="h-72 w-full"></img>
       </CardHeader>
-      <CardContent className="team-card">
+      <CardContent className="team-card flex-grow h-full">
         <h2>
           <span>Name:</span> {name}
         </h2>
