@@ -1,6 +1,11 @@
 const Parallax = () => {
   return (
-    <div className="parallax-container">
+    <div
+      className="parallax-container"
+      data-aos="flip-left"
+      
+      data-aos-duration="500"
+    >
       <div className="parallax-child-div">
         <span>85%</span>
         <h4>Success for all clients so far</h4>

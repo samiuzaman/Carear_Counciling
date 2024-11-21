@@ -1,14 +1,28 @@
 import { TbBulb } from "react-icons/tb";
 import { IoLayersOutline } from "react-icons/io5";
 import PropTypes from "prop-types";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const AboutBanner = ({ aboutData }) => {
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: "ease-in-sine",
+      delay: 100,
+      disable: "mobile",
+    });
+  }, []);
   const { heading, description, vision, mission } = aboutData;
   return (
     <div className="about-container">
       {/* First Section */}
-      <div className="about-child-container">
-        <h2 className="about-banner-heading">{heading}</h2>
+      <div className="about-child-container" data-aos="fade-up">
+        <h2 className="about-banner-heading" data-aos="fade-up">
+          {heading}
+        </h2>
         <p>{description}</p>
         <div className="vission-mission-parent">
           {/* Vission Card */}

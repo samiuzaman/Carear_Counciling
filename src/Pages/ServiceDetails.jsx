@@ -10,7 +10,9 @@ import {
 } from "keep-react";
 import { FaStar } from "react-icons/fa";
 import Rating from "react-rating";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export const ReviewDataContext = createContext();
 const ServiceDetails = () => {
@@ -29,6 +31,13 @@ const ServiceDetails = () => {
     availability,
     description,
   } = service;
+  useEffect(() => {
+    AOS.init({
+      offset: 200,
+      duration: 600,
+      easing: "ease-in-sine",
+    });
+  }, []);
   return (
     <div className="w-11/12 md:8/12 lg:w-5/6 mx-auto my-12">
       <Helmet>
@@ -39,7 +48,11 @@ const ServiceDetails = () => {
         <CardHeader>
           <img src={image}></img>
         </CardHeader>
-        <div className="details-card-Itmes">
+        <div
+          className="details-card-Itmes"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <h2>{service_name}</h2>
           <p>
             Counselor Name :<span>{counselor}</span>
@@ -84,9 +97,7 @@ const ServiceDetails = () => {
       </div>
       <Divider />
       <div className="w-11/12 mdw-4/5 mx-auto my-8">
-        <h2 className="service-detail-about">
-          About this Service
-        </h2>
+        <h2 className="service-detail-about">About this Service</h2>
         <p className="text-[#202225] text-justify">{description}</p>
       </div>
       <Divider />
